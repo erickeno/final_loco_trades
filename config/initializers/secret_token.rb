@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-LocoTrades::Application.config.secret_key_base = 'fedfb21c9b0ea40e286cf1192933064dc93f79c2ec07395cda516d3959702e5b406485ef38c65c4117a8eddcb7933f23a7479eea16c741bed79f50c459c44f00'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+SampleApp::Application.config.secret_key_base = secure_token
