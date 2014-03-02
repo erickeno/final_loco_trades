@@ -1,0 +1,32 @@
+#home_page_panel {
+	background-color: #666666;
+	p {
+		color: #fff;
+	}
+	h4 {
+		color: #fff;
+	}
+}
+
+#subnav-top {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    height: 30px;
+
+    .sign_register a {
+    	color: #008cba;
+    }
+
+}
+
+#subnav2-homepage {
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+#logo-topbar img {
+	width: 50%;
+	height: 50%;
+	margin: -15px 50% 10px 50%;
+}
