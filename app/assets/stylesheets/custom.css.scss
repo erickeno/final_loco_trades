@@ -1,3 +1,22 @@
+body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -6em;
+}
+
+.push {
+	height: 6em;
+}
+
+
+
+/*------ top bar ------------*/
+
 #home_page_panel {
 	background-color: #666666;
 	p {
@@ -30,3 +49,87 @@
 	height: 50%;
 	margin: -15px 50% 10px 50%;
 }
+
+
+/*------- sign up page -------*/
+
+
+.signuplabel {
+	text-align: center;
+}
+
+.signupbutton {
+	text-align: center;
+}
+
+
+/*------ error and alert -----------*/
+
+#error_explanation h2 {
+	font-size: 1.35em;
+	color: #f04124;
+}
+
+#error_explanation ul li  {
+	color: #f04124;
+}
+
+.alert-box  {
+	text-align: center;
+	background-color: #f04124;
+}
+
+.alert-box.notice {
+	background-color: #7CCD7C;
+	border-color: #7CCD7C;
+}
+ .alert .alert-box timedout {
+ 	display:none;
+ }
+
+/*--------- privacy policy -----------*/
+
+.privacy_policy_list {
+	font-size: 14px;
+}
+
+
+/*-------footer ----------------*/
+
+.footer_loco {
+	height: 6em;
+	bottom: 1px;
+	margin-top: 50px;
+	border-top-color: #737373;
+	border-top-style: solid;
+	border-top-width: 1px;
+	background-color: #333333;
+}
+
+.footer_loco ul {
+	padding-left: 5%;
+	padding-top: 2%;
+}
+
+.footer_loco a {
+	color: #666666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

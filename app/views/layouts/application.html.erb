@@ -12,11 +12,22 @@
   </head>
 
   <body>
-    
-    <%= render 'layouts/subnav' %>
-    <%= render 'layouts/topbar' %>
+    <div class="wrapper">
+      <%= render 'layouts/subnav' %>
+      <%= render 'layouts/topbar' %>
+      
+      <div id= "flash-notice"> 
+        <% flash.each do |key, value| %>
+          <div class= "alert alert-box <%= key %> radius"><%= value %></div>
+        <% end %>
+      </div>
 
-    <%= yield %>
+      <%= yield %>
+      <div class="push"></div>
+    </div>
+      <%= render 'layouts/footer' %>
+      <%= render 'devise/shared/privacy_policy' %>
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,13 +1,20 @@
 <div class="row" id="subnav-top">
-	<div class="large-9 large-centered columns">
+	<div class="large-9  large-centered columns">
 		<div>
 		  <dl class="sub-nav">
-		    <dd class="sign_register">Hi!<a href="#">sign</a>or<a href="#">register</a>|</dd>
-		    <dd><a href="#">Home</a>|</dd>
-		    <dd><a href="#">About</a>|</dd>
-		    <dd><a href="#">Contact</a>|</dd>
+		    <dd class="sign_register">
+          <% if user_signed_in? %>
+          <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+          Hi!<%= link_to "sign in", new_user_session_path %>
+          or<%= link_to "register", new_user_registration_path %>|
+          <% end %>
+        </dd>
+		    <dd><%= link_to "Home", root_path %>|</dd>
+		    <dd><%= link_to "About", about_path %>|</dd>
+		    <dd><%= link_to "Contact", contact_path %>|</dd>
 		    <dd><a href="#">Trades</a>|</dd>
-		    <dd><a href="#">Advertise with us</a></dd>
+		    <dd><a href="#">Advertise</a></dd>
 		  </dl>
 		</div>
 	</div>

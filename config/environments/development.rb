@@ -26,4 +26,17 @@ LocoTrades::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "loco-trades-new.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name:"contact@locotrades.com",
+    password: "locotrades"
+  }
+
+  config.action_mailer.default_url_options = { :host => 'http://loco-trades-86972.use1.nitrousbox.com' }
 end
