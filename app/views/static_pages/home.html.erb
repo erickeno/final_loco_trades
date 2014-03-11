@@ -26,17 +26,18 @@
 </div>
 
 
-<div class="row">
-	<ul class="large-block-grid-4" >
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-		<li><img src="/10.jpg" style="height: 250px; width: 300px; border-radius: 5px;"></li>
-	</ul>
+<div class="row" >
+	<%if @posts.any? %>
+		<% @posts.each do |post| %>
+			<div class="large-3 columns">
+				<div class="panel">
+					<p><%= post.title %></p>
+					<p><%= post.description %></p>
+					<p><%= time_ago_in_words(post.updated_at) %></p>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 
 

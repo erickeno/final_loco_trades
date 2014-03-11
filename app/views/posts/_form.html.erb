@@ -1,0 +1,35 @@
+<%= form_for @post do |f| %>
+	
+	<% if @post.errors.any? %>
+		<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :value %>
+	<%= f.text_field :value %>
+
+	<%= f.label :category %>
+	<%= f.select :category, options_for_select(["",  "Art", "Books and Movies", "Clothing","Collectibles", "Computers & Related", "Construction Materials", "Crafts & Hobbies", "Entertainment", "Farm & Ranch","Food & Beverages","Free Stuff", "Gardening","Gifts", "Health & Beauty", "Home & Electronics","Inductrial & Commercial", "Jewelry & Gemstones", "Medical Supplies","Miscellaneous","Motorworld","Music","Office Supplies","Others","Pets/Animals","Photography","Real Estate & Notes","Services","Sporting Goods & Recreation","Tools","Toys & Games","Vacation & Travel"]) %>
+
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+
+	<%= f.label :exchange %>
+	<%= f.text_field :exchange %>
+
+	<%= f.label :city %>
+	<%= f.text_field :city %>
+
+	<%= f.label :state %>
+	<%= f.text_field :state %>
+
+	<%= f.submit class: 'button radius' %>
+<% end %>
