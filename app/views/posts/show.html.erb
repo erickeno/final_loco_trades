@@ -1,27 +1,50 @@
-<div class="row">
-	<h1>Post show page</h1>
-	<p><%= @post.title %></p>
-	<p><%= @post.description %></p>
-	<p><%= @post.value %></p>
-	<p><%= @post.category %></p>
-	<p><%= @post.city %></p>
-	<p><%= @post.state %></p>
-	<p><%= @post.exchange %></p>
-</div>
+
+
+
+
 
 <div class="row">
-	<div>
-	  <% if @post.albums.any? %>
-	    <%= render partial: 'posts/album', collection: @post.albums, :html => {:multipart => true } %>
-	  <% else %>
-	    <h2>Please Upload an image to increase your chances!</h2>
-	  <% end %>
+  <i><%= @post.category %></i>
+  <h3><%= @post.title %></h3>
+  <p><%= @post.user.username %></p>
+  <div>
+      <% if @post.albums.any? %>
+    <i>(click to expand the image)</i>
+    <%= render partial: 'posts/album', collection: @post.albums, :html => {:multipart => true} %>
+    
+      <% else %>
+       
+      <% end %>
 	</div>
-
-
-	<div>
-		<% if @user == current_user %>
-			<%= render partial: 'albums/form' %>
-		<% end %>
-	</div>
+  
+  <dl class="tabs" data-tab>
+  <dd class="active"><a href="#panel2-1">Description</a></dd>
+  <dd><a href="#panel2-2">Value</a></dd>
+  <dd><a href="#panel2-3">Exchange</a></dd>
+  <dd><a href="#panel2-4">Location</a></dd>
+</dl>
+<div class="tabs-content" id="show_tabs_content">
+  <div class="content active" id="panel2-1">
+    <p><%= @post.description %></p>
+  </div>
+  <div class="content" id="panel2-2">
+    <p><%= @post.value %></p>
+  </div>
+  <div class="content" id="panel2-3">
+    <p><%= @post.exchange %></p>
+  </div>
+  <div class="content" id="panel2-4">
+    <p><%= @post.city %>, <%= @post.state %></p>
+  </div>
 </div>
+  
+  <div>
+	<% if @post.user == current_user %>
+		<%= render partial: 'albums/form' %>
+    <div>
+      <%= link_to "edit post", edit_post_path(@post), class: "button tiny round" %>
+    </div>
+	<% end %>
+</div>
+</div>
+

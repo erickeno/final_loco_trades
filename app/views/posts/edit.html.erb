@@ -1,4 +1,7 @@
 <div class="row">
 	<h1>Edit Post</h1>
 	<%= render 'form' %>
+  <div>
+    <%= link_to "delete post", @post, method: :delete, class: "button tiny alert radius" %>
+  </div>
 </div>

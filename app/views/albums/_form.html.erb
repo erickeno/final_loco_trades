@@ -1,10 +1,11 @@
-<h3>Upload Your images below</h3>
-
-<%= form_for [ @post, @album ], :html => {:multipart => true } do |f| %>
-	<div class="field">
-		<%= f.file_field :image, id: 'subm-field' %><br>
-	</div>
-
-	<%= f.submit "Add images", class: 'btn btn-primary', id: 'subm', disabled: 'add images first' %>
-
-<% end %> 
+<fieldset>
+  <legend>Upload Images</legend>
+    <%= form_for [ @post, @album ], :html => {:multipart => true } do |f| %>
+    <div class="field">
+      <%= f.file_field :image, id: 'subm-field' %><br>
+    </div>
+  
+      <%= f.submit "Add images", class: 'button tiny radius', id: 'subm', disabled: 'add images first' %>
+  
+    <% end %>
+</fieldset>

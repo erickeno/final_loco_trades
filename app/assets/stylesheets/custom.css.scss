@@ -6,7 +6,7 @@ body {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -6em;
+	margin: 0 auto -9em;
 }
 
 .push {
@@ -104,6 +104,7 @@ body {
 	border-top-style: solid;
 	border-top-width: 1px;
 	background-color: #333333;
+  font-weight: bold;
 }
 
 .footer_loco ul {
@@ -115,19 +116,70 @@ body {
 	color: #666666;
 }
 
+/*------- Post form -------------*/
+
+.post_form input {
+	width: 50%;
+}
+
+.post_form textarea {
+	height: 15em;
+}
+
+.post_form select {
+	width: 50%;
+}
+
+input#post_city.post_form_city {
+	width: 30%;
+}
+
+input#post_state.post_form_state {
+	width: 30%;
+}
+input.button.radius.post_form_submit_button {
+	width: 20%;
+}
+
+/*--------- Post index page --------------*/
+
+#post_index_panel {
+  padding: 0 0 2px 0;
+  border-radius: 3px;
+  border-color: #EEEEEE;
+  p {
+    margin-bottom: 5px;
+    padding-left: 3px;
+  }
+  p.post_index_title {
+     margin-bottom: 5px;
+    color: rgb(114, 114, 196);
+    font-weight: bold;
+  }
+  p.post_index_value {
+    font-weight: bold;
+  }
+  p.post_index_seller {
+    font-size: 14px;
+  }
+}
+
+.index_button_show a {
+  left: 25%;
+}
 
 
+/*--------- show page --------*/
 
-
-
-
-
-
-
-
-
-
-
+#show_tabs_content div {
+  border-width: thin;
+  border-color: #ccc;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-right-style: solid;
+  padding-left: 10px
+}
 
 
 
