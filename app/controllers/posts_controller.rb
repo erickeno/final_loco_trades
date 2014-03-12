@@ -34,6 +34,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @album = Album.new
+    @album.post_id = @post.id
   end
 
   def destroy

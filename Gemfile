@@ -54,3 +54,11 @@ end
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
+
+
+
+
+
+

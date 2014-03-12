@@ -8,3 +8,20 @@
 	<p><%= @post.state %></p>
 	<p><%= @post.exchange %></p>
 </div>
+
+<div class="row">
+	<div>
+	  <% if @post.albums.any? %>
+	    <%= render partial: 'posts/album', collection: @post.albums, :html => {:multipart => true } %>
+	  <% else %>
+	    <h2>Please Upload an image to increase your chances!</h2>
+	  <% end %>
+	</div>
+
+
+	<div>
+		<% if @user == current_user %>
+			<%= render partial: 'albums/form' %>
+		<% end %>
+	</div>
+</div>

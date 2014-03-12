@@ -29,5 +29,17 @@
       <%= render 'devise/shared/privacy_policy' %>
     
     <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+            $('#subm-field').change(
+                function(){
+                    if ($(this).val()) {
+                        $('#subm').attr('disabled',false); 
+                    } 
+                }
+                );
+        });
+    </script>
   </body>
 </html>
