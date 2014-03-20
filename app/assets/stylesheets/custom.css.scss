@@ -13,7 +13,7 @@ body {
 	height: 6em;
 }
 
-
+ 
 
 /*------ top bar ------------*/
 
@@ -153,14 +153,25 @@ input.button.radius.post_form_submit_button {
   }
   p.post_index_title {
      margin-bottom: 5px;
-    color: rgb(114, 114, 196);
-    font-weight: bold;
+    color: white;
+    font-weight: normal;
+    padding: 10px 5px;
+    background-color: #383838;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    height: 70px;
   }
   p.post_index_value {
     font-weight: bold;
   }
   p.post_index_seller {
-    font-size: 14px;
+    font-size: 13px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: grey;
+  }
+  p.post_index_description {
+  	font-size: 13px;
+  	height: 40px;
   }
 }
 
@@ -180,8 +191,5 @@ input.button.radius.post_form_submit_button {
   border-right-style: solid;
   padding-left: 10px
 }
-
-
-
 
 
