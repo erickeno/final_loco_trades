@@ -1,16 +1,17 @@
-
-
-
-
-
-<div class="row">
+<div class="row" id= "show_page_id">
   <i><%= @post.category %></i>
   <h3><%= @post.title %></h3>
   <p><%= @post.user.username %></p>
   <div>
       <% if @post.albums.any? %>
-    <i>(click to expand the image)</i>
-    <%= render partial: 'posts/album', collection: @post.albums, :html => {:multipart => true} %>
+    <h6 class="subheader">(click to expand the image)</h6>
+        
+        <ul class="clearing-thumbs" id="show_images" data-clearing> 
+         
+            <% for album in @post.albums do %>
+              <li><%= link_to(image_tag(album.image_url), album.image_url) %></li>
+            <% end %>
+        </ul>
     
       <% else %>
        
@@ -40,11 +41,20 @@
   
   <div>
 	<% if @post.user == current_user %>
-		<%= render partial: 'albums/form' %>
+    
+    
+    <fieldset>
+      <legend>Add more images</legend>
+       
+      <label>
+         <%= link_to "Add more Images", new_post_album_path(@post), class: 'button radius tiny' %>
+    </label>
+    </fieldset>
     <div>
       <%= link_to "edit post", edit_post_path(@post), class: "button tiny round" %>
     </div>
 	<% end %>
 </div>
+  
 </div>
 

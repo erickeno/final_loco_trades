@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   	if current_user
   		@post = current_user.posts.build(post_params)
   		if @post.save
-  			redirect_to @post, notice: 'Post was successfully created'
+  			#redirect_to @post, notice: 'Post was successfully created'
+        redirect_to new_post_album_path(@post), notice: 'Add images to your post below'
   		else
   			render 'new'
   		end
