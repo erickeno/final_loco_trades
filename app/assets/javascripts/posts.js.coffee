@@ -7,3 +7,5 @@ $('#show_images').find('img').css({'width': '50px', 'height': '50px'});
 $('.clearing-thumbs li:first').css({'float': 'none', 'margin-bottom': '10px'})
 $('#show_images').find('img:first').css({'width': '350px','height': '350px','border': '1px #DDDDDD solid'});
 
+$('#make_offer_button_top').click ->
+  $('#comment_content').focus();

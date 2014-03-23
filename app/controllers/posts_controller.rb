@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: [:edit, :show, :update]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+
   def new
   	@post = Post.new
   end
@@ -37,6 +39,10 @@ class PostsController < ApplicationController
   def show
     @album = Album.new
     @album.post_id = @post.id
+
+    @commentable = find_commentable
+    @comments = @commentable.comments.arrange(:order => :created_at)
+    @comment = Comment.new
   end
 
   def destroy
@@ -57,5 +63,9 @@ class PostsController < ApplicationController
   def correct_user
   	@post = current_user.posts.find_by(id: params[:id])
   	redirect_to(root_url , notice: "You don't have the right authorization to perform that action") if @post.nil?
+  end
+
+  def find_commentable
+    return params[:controller].singularize.classify.constantize.find(params[:id])
   end
 end

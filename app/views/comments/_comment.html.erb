@@ -1,0 +1,15 @@
+<div class="media-body">
+	
+	<p><%= simple_format( comment.content) %></p>
+	<p class="comment_info">Posted <%= time_ago_in_words(comment.created_at) %> ago by <strong>anycurrentuser </strong></p>
+	
+	
+
+	<div class="actions">
+		<%= link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment), class: "reply_button_for_comment" %>
+	</div>
+	<div class="nested_messages"><%= nested_comments(comment.children) %></div>
+	<hr>
+	
+
+</div>

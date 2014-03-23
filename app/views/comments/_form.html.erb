@@ -1,0 +1,9 @@
+<%= form_for [@commentable, @comment] do |f| %>
+	<%= f.hidden_field :parent_id %>
+
+	<div>
+		<%= f.label :content, "Make an offer", class: "new_comment_header" %><br>
+		<%= f.text_area :content, :rows => 4 %>
+	</div>
+		<%= f.submit "Post an offer", class: 'button radius' %>
+<% end %>

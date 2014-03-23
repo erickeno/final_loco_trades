@@ -222,12 +222,27 @@ input.button.radius.post_form_submit_button {
 }
 
 
+.nested_messages {
+  margin-left: 30px;
+}
+
+.nested_messages .nested_messages .nested_messages .nested_messages {
+  margin-left: 0;
+}
 
 
+.list_of_offers {
+  border: 1px #DDDDDD solid;
+  padding: 10px;
+}
 
+.comment_info {
+  color: #737373;
+}
 
-
-
+.new_comment_header {
+  font-size: 20px;
+}
 
 
 
