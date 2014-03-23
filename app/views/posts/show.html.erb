@@ -1,23 +1,26 @@
 <div class="row" id= "show_page_id">
-  <i><%= @post.category %></i>
-  <h3><%= @post.title %></h3>
-  <p><%= @post.user.username %></p>
-  <div>
-      <% if @post.albums.any? %>
-    <h6 class="subheader">(click to expand the image)</h6>
-        
-        <ul class="clearing-thumbs" id="show_images" data-clearing> 
+  <div class="row">
+    <div class="small-5 columns">
+        <% if @post.albums.any? %>
+          <ul class="clearing-thumbs" id="show_images" data-clearing> 
+           
+              <% for album in @post.albums do %>
+                <li><%= link_to(image_tag(album.image_url), album.image_url) %></li>
+              <% end %>
+          </ul>
+      
+        <% else %>
          
-            <% for album in @post.albums do %>
-              <li><%= link_to(image_tag(album.image_url), album.image_url) %></li>
-            <% end %>
-        </ul>
-    
-      <% else %>
-       
-      <% end %>
-	</div>
-  
+        <% end %>
+  	</div>
+    <div class="small-7 small-centered columns">
+      <h4><%= @post.title %></h4>
+      <p>Value: <strong><%= @post.value %></strong></p>
+      <p>Exchange Item: <strong><%= @post.exchange %></strong></p>
+      <p>Location: <strong><%= @post.city %>, <%= @post.state %></strong></p>
+      <button class="button radius">Make an offer</button>
+    </div>
+  </div>
   <dl class="tabs" data-tab>
   <dd class="active"><a href="#panel2-1">Description</a></dd>
   <dd><a href="#panel2-2">Value</a></dd>
