@@ -61,9 +61,17 @@
   
 
 <div>
-  <h4>Current Offers</h4>
+  <% if @post.user == current_user %>
+  <% else %>
   <%= render "comments/form" %>
+  <% end %>
+  
+  <% if @comments.any? %>
+  <h4>Current Offers</h4>
   <div class="list_of_offers"><%= nested_comments @comments %></div>
+  <% else %>
+  <h4>No offers yet</h4>
+  <% end %>
   
 </div>
 

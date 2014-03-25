@@ -1,15 +1,27 @@
+<!-- this is the comment.parent display -->
 <div class="media-body">
+	<div class="parent_comment_display">
+		<p><%= simple_format( comment.content) %></p>
+		<p class="comment_info">Posted <%= time_ago_in_words(comment.created_at) %> ago by 
+			<strong>
+				<% if comment.user.username? %>
+				<%= comment.user.username %>
+				<% else %>
+				<%= comment.user.first_name %>
+				<% end %>
+			</strong></p>
 	
-	<p><%= simple_format( comment.content) %></p>
-	<p class="comment_info">Posted <%= time_ago_in_words(comment.created_at) %> ago by <strong>anycurrentuser </strong></p>
 	
-	
-
+	<!--this is the replay link -->
 	<div class="actions">
 		<%= link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment), class: "reply_button_for_comment" %>
 	</div>
-	<div class="nested_messages"><%= nested_comments(comment.children) %></div>
-	<hr>
+	</div>
+
+	<!-- this is the comment.children display -->
+	<div class="children_comment_display">
+		<div class="nested_messages"><%= nested_comments(comment.children) %></div>
+	</div>
 	
 
 </div>

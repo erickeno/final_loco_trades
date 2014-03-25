@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @parent_id = params.delete(:parent_id)
     @commentable = find_commentable
@@ -12,6 +14,7 @@ class CommentsController < ApplicationController
     
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = "Successfully posted an offer."
       redirect_to @commentable
