@@ -41,8 +41,22 @@
 			<%= f.text_field :state, class: "post_form_state" %>
 
 		</fieldset>
-		
-
+     <% if @post.id? %>
+         <p> update images </p>
+      <% else %>
+        <fieldset>
+        <legend>Upload Images</legend>
+         
+          
+          <% number = 0 %>
+          <% if number <= 5 %>
+          <%= f.fields_for :albums do |album| %>
+            <%= album.label :image, "image ##{number += 1}" %>
+            <%= album.file_field :image %>
+          <% end %>
+          <% end %>
+        </fieldset>
+    <% end %>
 		
 		
 

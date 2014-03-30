@@ -18,7 +18,11 @@
       <p>Value: <strong><%= @post.value %></strong></p>
       <p>Exchange Item: <strong><%= @post.exchange %></strong></p>
       <p>Location: <strong><%= @post.city %>, <%= @post.state %></strong></p>
-      <button class="button radius" id="make_offer_button_top">Make an offer</button>
+      <% if @post.user == current_user %>
+
+      <% else %>
+        <button class="button radius" id="make_offer_button_top">Make an offer</button>
+      <% end %>
     </div>
   </div>
   <dl class="tabs" data-tab>
@@ -44,15 +48,6 @@
   
   <div>
 	<% if @post.user == current_user %>
-    
-    
-    <fieldset>
-      <legend>Add more images</legend>
-       
-      <label>
-         <%= link_to "Add more Images", new_post_album_path(@post), class: 'button radius tiny' %>
-    </label>
-    </fieldset>
     <div>
       <%= link_to "edit post", edit_post_path(@post), class: "button tiny round" %>
     </div>

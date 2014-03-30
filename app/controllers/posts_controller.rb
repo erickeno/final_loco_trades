@@ -6,14 +6,15 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
+    5.times { @post.albums.build }
   end
 
   def create
   	if current_user
   		@post = current_user.posts.build(post_params)
   		if @post.save
-  			#redirect_to @post, notice: 'Post was successfully created'
-        redirect_to new_post_album_path(@post), notice: 'Add images to your post below'
+  			redirect_to @post, notice: 'Post was successfully created'
+        # redirect_to new_post_album_path(@post), notice: 'Add images to your post below'
   		else
   			render 'new'
   		end
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-  	params.require(:post).permit(:title, :description, :value, :category, :city, :state, :exchange)
+  	params.require(:post).permit(:title, :description, :value, :category, :city, :state, :exchange, albums_attributes: [:image])
   end
 
   def correct_user

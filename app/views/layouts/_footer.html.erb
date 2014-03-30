@@ -1,13 +1,24 @@
-<div class="footer_loco">
-  <ul class="small-block-grid-7">
-    <li><a href="#">Posts</a></li>
-    <li><%= link_to "Log in", new_user_session_path %></li>
-    <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <li><a href="#">Trade history</a></li>
-    <li><a href="#">Wish list</a></li>
-    <li><a href="#">Newsletter</a></li>
-    <li><a href="#">Specials</a></li>
-  </ul>
+
+<div class="footer_bottom">
+  <div class="row">
+    <div class="medium-4 medium-4 push-8 columns">
+      <ul class="home-social">
+        <li><a href="http://www.twitter.com"><i class="fi-social-twitter"></i></a></li>
+        <li><a href="http://www.facebook.com"><i class="fi-social-facebook"></i></a></li>
+        <li><a href="http://www.tumblr.com"><i class="fi-social-tumblr"></i></a></li>
+      </ul>
+    </div>
+    <div class="medium-8 medium-8 pull-4 columns">
+     
+      <ul class="other_footer_links">
+        <li class="footer_logo"><%= link_to "Loco Trades", root_path %></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><a href="#" data-reveal-id="myModal" data-reveal>privacy policy</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Specials</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
-
-

@@ -248,6 +248,58 @@ input.button.radius.post_form_submit_button {
   line-height: 0;
 }
 
+/*----------footer -------*/
+
+.footer_bottom {
+  background-color: #333333;
+  height: 116px;
+	margin-top: 50px;
+}
+
+.footer_bottom ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+  color: #858585;
+}
+
+.other_footer_links li {
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+ul.other_footer_links li a:hover {
+  color: #777777;
+}
+
+ul.other_footer_links li a {
+  color: #858585;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.77778rem;
+}
+
+
+.fi-social-facebook:hover, .fi-social-twitter:hover, .fi-social-tumblr:hover {
+  color: #777777;
+}
+
+.fi-social-facebook, .fi-social-twitter, .fi-social-tumblr {
+  font-size: 60px;
+  color: #858585;
+}
+
+
+.nested_messages .media, .parent_comment_display {
+  background-color: #eeeeee;
+padding-left: 10px;
+border-radius: 5px;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 
 
 
