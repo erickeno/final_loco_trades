@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = "Successfully posted an offer."
+      PostMailer.offer_posted(@commentable.user).deliver #this is the mail code
       redirect_to @commentable
     else
       flash[:error] = "Error adding an offer."

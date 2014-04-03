@@ -21,7 +21,7 @@
       <% if @post.user == current_user %>
 
       <% else %>
-        <button class="button radius" id="make_offer_button_top">Make an offer</button>
+        <a href="#" class="button radius" data-reveal-id="myOffersModal" data-reveal>Make an offer</a>
       <% end %>
     </div>
   </div>
@@ -58,7 +58,11 @@
 <div>
   <% if @post.user == current_user %>
   <% else %>
-  <%= render "comments/form" %>
+    <a href="#" class="button radius" data-reveal-id="myOffersModal" data-reveal>Make an Offer</a>
+    <div id="myOffersModal" class="reveal-modal" data-reveal>
+      <%= render "comments/form" %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
   <% end %>
   
   <% if @comments.any? %>
