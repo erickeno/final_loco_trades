@@ -35,11 +35,13 @@
 						<%= link_to(image_tag(post.albums.first.image_url(:thumb)), post) %>
            <% else %>
 					<% end %>
-					<p class="post_index_title"><%= truncate(post.title, length: 55) %></p>
-          <p class="post_index_description"><%= truncate(post.description, length: 60) %></p> 
-          <p class="post_index_value"><%= post.value %></p>
-          <p class="post_index_seller"><i class="fi-torso"></i> <%= post.user.username %></p>
-          <div class="index_button_show"><%= (link_to "make an offer", post, class: "button tiny radius") unless post.albums.any? %></div>
+          <div class="post-info-display">
+            <p class="post_index_title"><%= truncate(post.title, length: 55) %></p>
+            <p class="post_index_description"><%= truncate(post.description, length: 60) %></p> 
+            <p class="post_index_value"><%= post.value %></p>
+            <p class="post_index_seller"><i class="fi-torso"></i> <%= post.user.username %></p>
+            <div class="index_button_show"><%= (link_to "make an offer", post, class: "button tiny radius") unless post.albums.any? %></div>
+          </div>
 				</div>
 			</div>
 		<% end %>

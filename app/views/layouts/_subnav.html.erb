@@ -13,8 +13,19 @@
 		    <dd><%= link_to "Home", root_path %>|</dd>
 		    <dd><%= link_to "About", about_path %>|</dd>
 		    <dd><%= link_to "Contact", contact_path %>|</dd>
-		    <dd><%= link_to "Trades", posts_path %>|</dd>
-		    <dd><%= link_to "New Trade", new_post_path %></dd>
+		    <dd><%= link_to "New Trade", new_post_path %>|</dd>
+        <dd>
+          <% if user_signed_in? %>
+            <a href="#" data-dropdown="hover1" data-options="is_hover:true">My Account</a>
+            <ul id="hover1" class="f-dropdown" data-dropdown-content>
+              <li><a href="#">My Trades</a></li>
+              <li><a href="#">bids/offers</a></li>
+              <li><a href="#">messages</a></li>
+              <li><a href="#">Trading History</a></li>
+              <li><a href="#">Watch list</a></li>
+            </ul>
+          <% end %>
+        </dd>
 		  </dl>
 		</div>
 	</div>

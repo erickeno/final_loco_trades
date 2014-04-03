@@ -9,3 +9,8 @@ $('#show_images').find('img:first').css({'width': '350px','height': '350px','bor
 
 $('#make_offer_button_top').click ->
   $('#comment_content').focus();
+
+#$('#post_index_panel').hover ->
+#  $('.post-info-display').fadeIn();
+#  $('.post-info-display').fadeOut();
+

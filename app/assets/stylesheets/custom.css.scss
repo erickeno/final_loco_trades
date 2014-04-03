@@ -156,8 +156,8 @@ input.button.radius.post_form_submit_button {
     color: white;
     font-weight: normal;
     padding: 10px 5px;
-    background-color: #515151;
-    font-family: Raleway, Helvetica, Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: 'Hammersmith One', sans-serif;
     height: 70px;
   }
   p.post_index_value {
@@ -281,11 +281,11 @@ ul.other_footer_links li a {
 }
 
 
-.fi-social-facebook:hover, .fi-social-twitter:hover, .fi-social-tumblr:hover {
+.fi-social-facebook:hover, .fi-social-twitter:hover, .fi-social-tumblr:hover, .fi-social-google-plus:hover, .fi-social-instagram:hover {
   color: #777777;
 }
 
-.fi-social-facebook, .fi-social-twitter, .fi-social-tumblr {
+.fi-social-facebook, .fi-social-twitter, .fi-social-tumblr, .fi-social-google-plus, .fi-social-instagram {
   font-size: 60px;
   color: #858585;
 }
@@ -301,9 +301,16 @@ border-radius: 5px;
 }
 
 
+.post-info-display {
+  display: none;
+  position: relative;
+  margin-top: -70px;
+}
 
-
-
+#post_index_panel:hover  .post-info-display {
+  display: block;
+  z-index: 200;
+}
 
 
 
