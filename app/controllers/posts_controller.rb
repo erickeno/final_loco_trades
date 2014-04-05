@@ -34,7 +34,9 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.all
+    @search = Post.search(params[:q])
+    @posts = @search.result
+    @search.build_condition
   end
 
   def show

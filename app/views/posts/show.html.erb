@@ -18,9 +18,7 @@
       <p>Value: <strong><%= @post.value %></strong></p>
       <p>Exchange Item: <strong><%= @post.exchange %></strong></p>
       <p>Location: <strong><%= @post.city %>, <%= @post.state %></strong></p>
-      <% if @post.user == current_user %>
-
-      <% else %>
+      <% unless @post.user == current_user %>
         <a href="#" class="button radius" data-reveal-id="myOffersModal" data-reveal>Make an offer</a>
       <% end %>
     </div>
@@ -56,8 +54,7 @@
   
 
 <div>
-  <% if @post.user == current_user %>
-  <% else %>
+  <% unless @post.user == current_user %>
     <a href="#" class="button radius" data-reveal-id="myOffersModal" data-reveal>Make an Offer</a>
     <div id="myOffersModal" class="reveal-modal" data-reveal>
       <%= render "comments/form" %>

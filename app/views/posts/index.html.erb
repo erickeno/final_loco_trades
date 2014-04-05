@@ -1,4 +1,33 @@
 <div class="row">
+	<div class="large-9 columns">
+		<ul class="example-orbit" data-orbit>
+			<li>
+				<img src="/andromeda-orbit.jpg" alt="slide 1" />
+				<div class="orbit-caption">Caption One.</div>
+			</li>
+			<li>
+				<img src="/satelite-orbit.jpg" alt="slide 2" />
+				<div class="orbit-caption">Caption Two.</div>
+			</li>
+			<li>
+				<img src="/launch-orbit.jpg" alt="slide 3" />
+				<div class="orbit-caption">Caption Three.</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="large-3 columns">
+		<div class="panel" id="home_page_panel">
+			<h4>Welcome to Loco Trades</h4>
+			<p>We are the go to site for barter trading</p>
+			<p>Check out the Items that are being traded below</p>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
 	<%if @posts.any? %>
 		<% @posts.each do |post| %>
 			<div class="large-3 columns">
@@ -6,13 +35,14 @@
 					<% if post.albums.any? %>
 						<%= link_to(image_tag(post.albums.first.image_url(:thumb)), post) %>
            <% else %>
-          
 					<% end %>
-					<p class="post_index_title"><%= truncate(post.title, length: 35) %></p>
-          <p class="post_index_description"><%= truncate(post.description, length: 60) %></p> 
-          <p class="post_index_value"><%= post.value %></p>
-          <p class="post_index_seller"><i class="fi-torso"></i> <%= post.user.username %></p>
-          <div class="index_button_show"><%= (link_to "make an offer", post, class: "button tiny radius") unless post.albums.any? %></div>
+          <div class="post-info-display">
+            <p class="post_index_title"><%= truncate(post.title, length: 55) %></p>
+            <p class="post_index_description"><%= truncate(post.description, length: 60) %></p> 
+            <p class="post_index_value"><%= post.value %></p>
+            <p class="post_index_seller"><i class="fi-torso"></i> <%= post.user.username %></p>
+            <div class="index_button_show"><%= (link_to "make an offer", post, class: "button tiny radius") unless post.albums.any? %></div>
+          </div>
 				</div>
 			</div>
 		<% end %>

@@ -5,7 +5,7 @@ LocoTrades::Application.routes.draw do
     resources :albums
   end
   devise_for :users
-  root 'static_pages#home'
+  root 'posts#index'
   match '/contact',       to: 'static_pages#contact',    via: 'get'
   match '/about',         to: 'static_pages#about',      via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
