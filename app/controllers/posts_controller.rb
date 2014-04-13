@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   def index
     @search = Post.search(params[:q])
     @posts = @search.result
-    @search.build_condition
+    #@search.build_condition
   end
 
   def show

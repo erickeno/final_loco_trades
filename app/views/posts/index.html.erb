@@ -1,3 +1,43 @@
+<form>
+	<div class="row" >
+		<div class="large-2 columns" id="logo-topbar">
+			<%= link_to image_tag("/app2dup.jpg"), root_path %>
+		</div>
+    <%= search_form_for @search do |f| %>
+		<div class="large-10 small-12 columns">
+			<div class="row collapse">
+				<div class="small-7 columns">
+					<%= f.text_field :description_cont %>
+				</div>
+				<div class="small-3 columns">
+					<%= f.select :category_cont, ["",  "Art", "Books and Movies", "Clothing","Collectibles", "Computers & Related", "Construction Materials", "Crafts & Hobbies", "Entertainment", "Farm & Ranch","Food & Beverages","Free Stuff", "Gardening","Gifts", "Health & Beauty", "Home & Electronics","Inductrial & Commercial", "Jewelry & Gemstones", "Medical Supplies","Miscellaneous","Motorworld","Music","Office Supplies","Others","Pets/Animals","Photography","Real Estate & Notes","Services","Sporting Goods & Recreation","Tools","Toys & Games","Vacation & Travel"] %>
+				</div>
+				<div class="small-2 columns">
+          <div><%= f.submit "Search", class: "button postfix" %></div>
+    <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+<div class="row">
+	<div class="large-12 columns">
+	  <dl class="sub-nav" id="subnav2-homepage">
+	    <dd><a href="#">Computers</a></dd>
+	    <dd><a href="#">Entertainment</a></dd>
+	    <dd><a href="#">Services</a></dd>
+	    <dd><a href="#">Tools</a></dd>
+	    <dd><a href="#">Motor World</a></dd>
+	    <dd><a href="#">Collectables</a></dd>
+	    <dd><a href="#">Home & Electronics</a></dd>
+	  </dl>
+	</div>
+</div>
+
+
+
 <div class="row">
 	<div class="large-9 columns">
 		<ul class="example-orbit" data-orbit data-options = "resume_on_mouseout: true; timer_speed: 10000;">
