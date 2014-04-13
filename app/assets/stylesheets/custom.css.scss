@@ -144,29 +144,33 @@ input.button.radius.post_form_submit_button {
 /*--------- Post index page --------------*/
 
 #post_index_panel {
-  padding: 0 0 2px 0;
+  padding:0;
+  height: 275px;
   border-radius: 3px;
   border-color: #EEEEEE;
+  margin-bottom: 2rem;
   p {
-    margin-bottom: 5px;
+    /*margin-bottom: 5px; */
     padding-left: 3px;
   }
   p.post_index_title {
-     margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    margin-bottom: 0px;
     color: white;
     font-weight: normal;
-    padding: 10px 5px;
+    padding: 10px 5px 0 5px;
     background-color: rgba(0, 0, 0, 0.6);
-    font-family: 'Hammersmith One', sans-serif;
-    height: 70px;
+    font-family: 'Open Sans', sans-serif;
+    height: 68px;
   }
   p.post_index_value {
     font-weight: bold;
   }
   p.post_index_seller {
     font-size: 13px;
+    border-top: none;
 
-    border-top: 1px grey solid;
+    
   }
   p.post_index_description {
   	font-size: 13px;
@@ -304,12 +308,24 @@ border-radius: 5px;
 .post-info-display {
   display: none;
   position: relative;
-  margin-top: -70px;
+  margin-top: -68px;
 }
 
 #post_index_panel:hover  .post-info-display {
   display: block;
   z-index: 200;
+}
+
+
+
+.subnav_hover_effect dd a:hover {
+  border-bottom: 2px solid orange;
+}
+
+div.panel.clearfix {
+  border-color: #cccccc;
+  padding: 10px 10px 3px 10px;
+  background: #FFFFFF;
 }
 
 
