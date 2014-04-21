@@ -58,6 +58,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'ancestry'
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
+gem 'kaminari'
 
 
 

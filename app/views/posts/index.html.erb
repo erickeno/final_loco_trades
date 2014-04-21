@@ -67,9 +67,13 @@
 </div>
 
 
-
 <div class="row">
-	<%if @posts.any? %>
+  <div class="small-4 small-centered columns">
+    <%= paginate @posts %>
+  </div>
+</div>
+<div class="row">
+  <%if @posts.any? %>
 		<% @posts.each do |post| %>
 			<div class="large-3 columns">
 				<div class="panel" id="post_index_panel">
@@ -92,3 +96,13 @@
 		<% end %>
 	<% end %>
 </div>
+<div class="row">
+  <div class="small-4 small-centered columns">
+    <%= paginate @posts %>
+  </div>
+</div>
+
+
+
+
+

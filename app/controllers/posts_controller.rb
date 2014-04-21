@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def index
     @search = Post.search(params[:q])
-    @posts = @search.result
+    @posts = @search.result.page(params[:page]).per(20)
     #@search.build_condition
   end
 
