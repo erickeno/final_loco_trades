@@ -318,7 +318,7 @@ border-radius: 5px;
 
 
 
-.subnav_hover_effect dd a:hover {
+.subnav_hover_effect dd a:hover, #subnav2-homepage dd a:hover {
   border-bottom: 3px solid orange;
 }
 
@@ -328,7 +328,9 @@ div.panel.clearfix {
   background: #FFFFFF;
 }
 
-
+#alternate-subnav {
+  margin-top: 20px;
+}
 
 
 

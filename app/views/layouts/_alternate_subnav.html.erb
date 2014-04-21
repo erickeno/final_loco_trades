@@ -1,0 +1,41 @@
+<div class= "row" id="alternate-subnav">
+  <div class="large-2 columns" id="logo-topbar">
+    <%= link_to image_tag("/app2dup.jpg"), root_path %>
+  </div>
+  <div class="large-10 columns">
+    <div class="row" id="subnav-top">
+      <div class="large-9  large-centered columns">
+        <div>
+          <dl class="sub-nav">
+            <div class="subnav_hover_effect">
+              <dd class="sign_register">
+                <% if user_signed_in? %>
+                <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+                <% else %>
+                Hi!<%= link_to "sign in", new_user_session_path %>
+                or<%= link_to "register", new_user_registration_path %>|
+                <% end %>
+              </dd>
+              <dd><%= link_to "Home", root_path %>|</dd>
+              <dd><%= link_to "About", about_path %>|</dd>
+              <dd><%= link_to "Contact", contact_path %>|</dd>
+              <dd><%= link_to "New Post", new_post_path %>|</dd>
+            </div>
+            <dd>
+              <% if user_signed_in? %>
+                <a href="#" data-dropdown="hover1" data-options="is_hover:true">My Account</a>
+                <ul id="hover1" class="f-dropdown" data-dropdown-content>
+                  <li><a href="#">My Trades</a></li>
+                  <li><a href="#">bids/offers</a></li>
+                  <li><a href="#">messages</a></li>
+                  <li><a href="#">Trading History</a></li>
+                  <li><a href="#">Watch list</a></li>
+                </ul>
+              <% end %>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
