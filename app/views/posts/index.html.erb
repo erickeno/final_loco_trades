@@ -11,7 +11,7 @@
 					<%= f.text_field :description_cont %>
 				</div>
 				<div class="small-3 columns">
-					<%= f.select :category_cont, ["",  "Art", "Books and Movies", "Clothing","Collectibles", "Computers & Related", "Construction Materials", "Crafts & Hobbies", "Entertainment", "Farm & Ranch","Food & Beverages","Free Stuff", "Gardening","Gifts", "Health & Beauty", "Home & Electronics","Inductrial & Commercial", "Jewelry & Gemstones", "Medical Supplies","Miscellaneous","Motorworld","Music","Office Supplies","Others","Pets/Animals","Photography","Real Estate & Notes","Services","Sporting Goods & Recreation","Tools","Toys & Games","Vacation & Travel"] %>
+					<%= f.select :category_cont, ["",  "Art", "Books and Movies", "Clothing","Collectables", "Computers & Related", "Construction Materials", "Crafts & Hobbies", "Entertainment", "Farm & Ranch","Food & Beverages","Free Stuff", "Gardening","Gifts", "Health & Beauty", "Home & Electronics","Inductrial & Commercial", "Jewelry & Gemstones", "Medical Supplies","Miscellaneous","Motorworld","Music","Office Supplies","Others","Pets/Animals","Photography","Real Estate & Notes","Services","Sporting Goods & Recreation","Tools","Toys & Games","Vacation & Travel"] %>
 				</div>
 				<div class="small-2 columns">
           <div><%= f.submit "Search", class: "button postfix" %></div>
@@ -24,20 +24,45 @@
 
 
 <div class="row">
-	<div class="large-12 columns">
-	  <dl class="sub-nav" id="subnav2-homepage">
-	    <dd><a href="#">Computers</a></dd>
-	    <dd><a href="#">Entertainment</a></dd>
-	    <dd><a href="#">Services</a></dd>
-	    <dd><a href="#">Tools</a></dd>
-	    <dd><a href="#">Motor World</a></dd>
-	    <dd><a href="#">Collectables</a></dd>
-	    <dd><a href="#">Home & Electronics</a></dd>
-	  </dl>
-	</div>
+  <div class="large-12 columns">
+    <dl class="sub-nav sub-nav-new">
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Computers & Related" %>
+      <dd><%= f.submit "Computers" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Entertainment" %>
+      <dd><%= f.submit "Entertainment" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Services" %>
+      <dd><%= f.submit "Services" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Tools" %>
+      <dd><%= f.submit "Tools" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Motorworld" %>
+      <dd><%= f.submit "Motorworld" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Collectables" %>
+      <dd><%= f.submit "Collectables" %></dd>
+      <% end %>
+      
+      <%= search_form_for @search do |f| %>
+        <%= f.hidden_field :category_cont, value: "Home & Electronics" %>
+      <dd><%= f.submit "Home & Electronics" %></dd>
+      <% end %>
+    </dl>
+  </div>
 </div>
-
-
 
 <div class="row">
 	<div class="large-9 columns">
