@@ -1,19 +1,19 @@
 <form>
 	<div class="row" >
     <%= render 'layouts/subnav' %>
-		<div class="large-2 columns" id="logo-topbar">
+		<div class="large-2 columns show-for-medium-up" id="logo-topbar">
 			<%= link_to image_tag("/app2dup.jpg"), root_path %>
 		</div>
     <%= search_form_for @search do |f| %>
-		<div class="large-10 small-12 columns">
+		<div class="medium-10 small-12 columns">
 			<div class="row collapse">
-				<div class="small-7 columns">
-					<%= f.text_field :description_cont %>
+				<div class="small-12 medium-7 columns">
+					<%= f.text_field :description_cont, placeholder: "Search" %>
 				</div>
-				<div class="small-3 columns">
+				<div class="small-12 medium-3 columns">
 					<%= f.select :category_cont, ["",  "Art", "Books and Movies", "Clothing","Collectables", "Computers & Related", "Construction Materials", "Crafts & Hobbies", "Entertainment", "Farm & Ranch","Food & Beverages","Free Stuff", "Gardening","Gifts", "Health & Beauty", "Home & Electronics","Inductrial & Commercial", "Jewelry & Gemstones", "Medical Supplies","Miscellaneous","Motorworld","Music","Office Supplies","Others","Pets/Animals","Photography","Real Estate & Notes","Services","Sporting Goods & Recreation","Tools","Toys & Games","Vacation & Travel"] %>
 				</div>
-				<div class="small-2 columns">
+				<div class="small-12 medium-2 columns">
           <div><%= f.submit "Search", class: "button postfix" %></div>
     <% end %>
 				</div>
@@ -23,7 +23,7 @@
 </form>
 
 
-<div class="row">
+<div class="row show-for-medium-up">
   <div class="large-12 columns">
     <dl class="sub-nav sub-nav-new">
       <%= search_form_for @search do |f| %>
@@ -100,7 +100,7 @@
 <div class="row">
   <%if @posts.any? %>
 		<% @posts.each do |post| %>
-			<div class="large-3 columns">
+			<div class="large-3 small-6 medium-3 columns">
 				<div class="panel" id="post_index_panel">
 					<% if post.albums.any? %>
 						<%= link_to(image_tag(post.albums.first.image_url(:thumb)), post) %>

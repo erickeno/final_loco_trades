@@ -1,0 +1,36 @@
+<nav class="top-bar show-for-small-only" data-topbar id="topbar_small">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Loco Trades</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "sign in", new_user_session_path %></li>
+        <li><%= link_to "register", new_user_registration_path %></li>
+      <% end %>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to "New Post", new_post_path %></li>
+      <% if user_signed_in? %>
+      <li class="has-dropdown">
+        <a href="#">Account</a>
+        <ul class="dropdown">
+          <li><a href="#">My Trades</a></li>
+          <li><a href="#">bids/offers</a></li>
+          <li><a href="#">messages</a></li>
+          <li><a href="#">Trading History</a></li>
+          <li><a href="#">Watch list</a></li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+</nav>

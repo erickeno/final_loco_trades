@@ -362,10 +362,31 @@ dl.sub-nav-new dd {
   padding-bottom: 3px;
 }
 
+/*------ Topbar visible in mobile only ----*/
 
+#topbar_small {
+  margin-bottom: 20px;
+}
 
+@media only screen and (max-width: 40em) {
+  #post_index_panel {
+    border-color: white;
+    background: none;
+    border: none;
+  }
 
+  #main_footer_links {
+    background-color: #333333;
+  }
+}
 
+@media only screen and (max-width: 64em) {
+  #post_index_panel {
+    border-color: white;
+    background: none;
+    border: none;
+  }
+}
 
 
 
